@@ -19,9 +19,11 @@ public class DIApplication {
 		MyController myController = (MyController) ctx.getBean("myController");
 		myController.hello();
         log.info("* ctor injector");
+        // constructor dependency injection
         CtorInjectedController ctorInjectedController = ctx.getBean(CtorInjectedController.class);
         log.info(ctorInjectedController.sayHello());
         log.info("* setter injection");
+        // setter dependency injection
 		SetterInjectedController setterInjectedController = ctx.getBean(SetterInjectedController.class);
         log.info(setterInjectedController.sayHello());
 	}
